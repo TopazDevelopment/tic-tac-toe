@@ -31,6 +31,14 @@ h1 {
   opacity: 1;
 }
 
+#scores {
+  opacity: 0;
+}
+
+#scores.active {
+  opacity: 1;
+}
+
 .display {
   margin: auto auto;
   font-family: sans-serif;
