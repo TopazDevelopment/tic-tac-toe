@@ -18,3 +18,13 @@
 .grid:hover {
   background-color: lightgrey;
 }
+
+.win {
+  border-color: green;
+  color: green;
+}
+
+.lose {
+  border-color: red;
+  color: red;
+}
