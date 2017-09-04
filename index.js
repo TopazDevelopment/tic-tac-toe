@@ -82,10 +82,11 @@ function victoryChecker() {
 
 
 
-    console.log('no winner')
+
   }
   if (availableSpaces === 0) {
     highlightCells(squares, 'lose')
+    console.log('no winner')
     return true
   }
   return false
