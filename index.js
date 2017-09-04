@@ -20,6 +20,7 @@ Game.prototype = {
   active: false,
   playerOne: null,
   playerTwo: null,
+  firstPlayer: 'One',
   turn: 'playerOne',
   currentValue: 'X',
   squares: {
@@ -43,13 +44,14 @@ Game.prototype = {
     this.getPlayerName('Two')
     this.active = true
     this.board.classList.add('active')
-    this.setIndicator('One')
+    this.setIndicator(this.firstPlayer)
     this.indicator.classList.add('active')
     this.bindEvents()
     this.button.disabled = true
   },
 
   setIndicator: function (player) {
+    console.log('setIndicator', player)
     this.indicator.innerHTML =
       this['player' + player] + '\'s turn ' +
         '(' + (player === 'One' ? 'X' : 'O') + ').'
@@ -195,8 +197,21 @@ Game.prototype = {
         this.squares[key] = null
       }
     }
-    this.turn = 'playerOne'
-    this.currentValue = 'X'
+    if (this.firstPlayer === 'One') {
+      console.log('change to player Two being first')
+      this.firstPlayer = 'Two'
+      this.turn = 'playerTwo'
+      this.currentValue = 'O'
+    } else {
+      console.log('change to player one being first')
+      this.firstPlayer = 'One'
+      this.turn = 'playerOne'
+      this.currentValue = 'X'
+    }
+    console.log('this.turn', this.turn)
+    console.log('this.currentValues', this.currentValue)
+    console.log('this.firstPlayer', this.firstPlayer)
+
   }
 }
 
