@@ -214,12 +214,10 @@ Game.prototype = {
       }
     }
     if (this.firstPlayer === 'One') {
-      console.log('change to player Two being first')
       this.firstPlayer = 'Two'
       this.turn = 'playerTwo'
       this.currentValue = 'O'
     } else {
-      console.log('change to player one being first')
       this.firstPlayer = 'One'
       this.turn = 'playerOne'
       this.currentValue = 'X'
