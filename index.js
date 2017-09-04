@@ -71,7 +71,7 @@ function victoryChecker() {
 
     if (doms.length) {
       console.log('doms', doms)
-      highlightCells(doms, 'win')
+      //highlightCells(doms, 'win')
       return true
     }
 
