@@ -12,6 +12,8 @@ function Game () {
   this.board = getDomById('game')
   this.indicator = getDomById('playerTurn')
   this.button = getDomById('gameStart')
+  this.scores = getDomById('scores')
+  console.log(this.scores)
 }
 
 // Properties of the Game object.
@@ -20,6 +22,9 @@ Game.prototype = {
   active: false,
   playerOne: null,
   playerTwo: null,
+  playerOneWins: 0,
+  playerTwoWins: 0,
+  draws: 0,
   turn: 'playerOne',
   currentValue: 'X',
   squares: {
@@ -47,6 +52,9 @@ Game.prototype = {
     this.indicator.classList.add('active')
     this.bindEvents()
     this.button.disabled = true
+    console.log(this.playerOneWins)
+    console.log(this.playerTwoWins)
+    console.log(this.draws)
   },
 
   setIndicator: function (player) {
@@ -138,10 +146,18 @@ Game.prototype = {
 
     if (winningSymbol) {
       classToAdd = 'win'
-      message = (winningSymbol === 'X' ? this.playerOne : this.playerTwo) + ' WINS!'
+      if (winningSymbol === 'X') {
+        this.playerOneWins++
+        message = this.playerOne
+      }else {
+        this.playerTwoWins++
+        message = this.playerTwo
+      }
+        message += ' wins!'
     } else {
       message = 'No winner!'
       classToAdd = 'lose'
+      this.draws++
     }
 
     this.indicator.innerHTML = message
@@ -154,6 +170,10 @@ Game.prototype = {
 
     this.button.disabled = false
 
+    this.scores.querySelector('#playerOne').innerHTML = this.playerOneWins
+    this.scores.querySelector('#playerTwo').innerHTML = this.playerTwoWins
+    this.scores.querySelector('#draws').innerHTML = this.draws
+    this.scores.classList.add('active')
     this.unBindEvents()
   },
 
@@ -190,6 +210,7 @@ Game.prototype = {
       dom.querySelector('.display').innerHTML = ''
       dom.classList.remove('win', 'lose')
     }
+    this.scores.classList.remove('active')
     for (var key in this.squares) {
       if (this.squares.hasOwnProperty(key)) {
         this.squares[key] = null
