@@ -8,28 +8,64 @@
   </head>
   <body>
     <h1>Tic Tac Toe Game</h1>
-    <p>You may want to open your development tools.</p>
 
-    <div id="playerTurn">
-      player one's turn
+    <div class="center">
+      <button id="gameStart" onclick="gameObj.start()">
+        Start Game
+      </button>
     </div>
 
-    <div id="board">
-      <div class="row">
-        <div class="grid leftColumn topRow leftDiagonal"></div>
-        <div class="grid topRow centerColumn"></div>
-        <div class="grid rightColumn topRow rightDiagonal"></div>
+    <div id="game">
+
+      <div id="playerTurn" class="center"></div>
+
+      <div id="board">
+        <div class="row">
+
+          <div id="topLeft" class="square leftColumn topRow leftDiagonal">
+            <span class="display"></span>
+          </div>
+
+          <div id="top" class="square topRow centerColumn">
+            <span class="display"></span>
+          </div>
+
+          <div id="topRight" class="square rightColumn topRow rightDiagonal">
+            <span class="display"></span>
+          </div>
+
+        </div>
+        <div class="row">
+
+          <div id="middleLeft" class="square leftColumn middleRow">
+            <span class="display"></span>
+          </div>
+
+          <div id="middle" class="square middleRow centerColumn leftDiagonal rightDiagonal">
+            <span class="display"></span>
+          </div>
+
+          <div id="middleRight" class="square rightColumn middleRow">
+            <span class="display"></span>
+          </div>
+
+        </div>
+        <div class="row">
+
+          <div id="bottomLeft" class="square bottomRow rightDiagonal leftColumn">
+            <span class="display"></span>
+          </div>
+
+          <div id="bottom" class="square bottomRow centerColumn">
+            <span class="display"></span>
+          </div>
+
+          <div id="bottomRight" class="square bottomRow leftDiagonal rightColumn">
+            <span class="display"></span>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="grid leftColumn middleRow"></div>
-        <div class="grid middleRow centerColumn leftDiagonal rightDiagonal"></div>
-        <div class="grid rightColumn middleRow"></div>
-      </div>
-      <div class="row">
-        <div class="grid bottomRow rightDiagonal leftColumn"></div>
-        <div class="grid bottomRow centerColumn"></div>
-        <div class="grid bottomRow leftDiagonal rightColumn"></div>
-      </div>
+
     </div>
 
   </body>
