@@ -1,0 +1,20 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid {
+  border-radius: 4px;
+  border: 1px solid black;
+  cursor: pointer;
+  height: 100px;
+  text-align: center;
+  user-select: none;
+  width: 100px;
+  font-size: 55px;
+  vertical-align: middle;
+}
+
+.grid:hover {
+  background-color: lightgrey;
+}

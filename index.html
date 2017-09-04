@@ -4,12 +4,33 @@
   <head>
     <title>Tic-Tac-Toe Game</title>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <h1>Tic Tac Toe Game</h1>
     <p>You may want to open your development tools.</p>
-    <script type="javascript">
-      console.log('something')
-    </script>
+
+    <div id="playerTurn">
+      player one's turn
+    </div>
+
+    <div id="board">
+      <div class="row">
+        <div class="grid leftColumn topRow leftDiagonal"></div>
+        <div class="grid topRow centerColumn"></div>
+        <div class="grid rightColumn topRow rightDiagonal"></div>
+      </div>
+      <div class="row">
+        <div class="grid leftColumn middleRow"></div>
+        <div class="grid middleRow centerColumn leftDiagonal rightDiagonal"></div>
+        <div class="grid rightColumn middleRow"></div>
+      </div>
+      <div class="row">
+        <div class="grid bottomRow rightDiagonal leftColumn"></div>
+        <div class="grid bottomRow centerColumn"></div>
+        <div class="grid bottomRow leftDiagonal rightColumn"></div>
+      </div>
+    </div>
+
   </body>
 </html>
