@@ -177,10 +177,12 @@ Game.prototype = {
   getPlayerName: function (player) {
     if (this['player' + player] !== null) { return false }
     var input = window.prompt('Player ' + player + ' name:')
-    this['player' + player] =
-       input === '' ?
-        'Player ' + player :
-         input
+    var playerName = input === '' ?
+      'Player ' + player :
+      input
+    this['player' + player] = playerName
+    this.scores.querySelector('#player' + player + 'Name').innerHTML = playerName
+
   },
 
   bindEvents: function () {
